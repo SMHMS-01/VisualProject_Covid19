@@ -28,6 +28,6 @@ void foo()
 int main(int argc, char *argv[])
 {
 	Json_data *jd = Json_data::getSingletonInstance();
-	jd->printData();
+
 	// foo();
 }
