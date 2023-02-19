@@ -1,0 +1,2 @@
+curl -o covid19.json -k -d '{"CK":"covid-19@nchc.org.tw", "querydata":"4049"}' -H "Content-Type: application/json" -X POST https://covid-19.nchc.org.tw/api/covid19
+curl -o covid19.json -k -d '{"CK":"covid-19@nchc.org.tw", "querydata":"4049"}' -H "Content-Type: application/json" -X POST https://covid-19.nchc.org.tw/api/covid19
