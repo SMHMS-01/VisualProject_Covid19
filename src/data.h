@@ -7,8 +7,14 @@ class Json_data
 {
 public:
     static Json_data *getSingletonInstance();
-    bool empty() noexcept { return _JsonData.empty(); }
-    std::vector<json> getJsonData() noexcept { return this->_JsonData; }
+    bool empty() noexcept
+    {
+        return _JsonData.empty();
+    }
+    std::vector<json> getJsonData() const noexcept
+    {
+        return this->_JsonData;
+    }
 
     // Print Curr Json Data with string
     void printData();

@@ -38,8 +38,8 @@ bool Json_data::initialization()
 
     if (!this->readData())
         return VERROR;
-
-    for (int i = 0; i <= NUM_OF_CT_2023 - 1; ++i)
+    // So far, we have information available for 233 countries and territories at most
+    for (int i = 0; i < NUM_OF_CT_2023; ++i)
     {
         for (json::iterator iter = _JsonData[i].begin(); iter != _JsonData[i].end(); ++iter)
         {
