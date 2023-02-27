@@ -39,7 +39,7 @@ public:
     // Weekly Average Newly Increased Diagnosis
     std::vector<float> getWeekAvNewIncDiag();
     // Weekly Average Newly Increased Diagnosis Per Millions
-    std::vector<float> getWeekAvNewIncrDiagPerM();
+    std::vector<float> getWeekAvNewIncDiagPerM();
 
 private:
     static Json_data *instance;
@@ -62,7 +62,7 @@ private:
     std::vector<float> VecTotalDiagPerM;
     std::vector<float> VecNewIncDiagPerM;
     std::vector<float> VecWeekAvNewIncDiag;
-    std::vector<float> VecWeekAvNewIncrDiagPerM;
+    std::vector<float> VecWeekAvNewIncDiagPerM;
 
     bool readData();
     bool initialization();

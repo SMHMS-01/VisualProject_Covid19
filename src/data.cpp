@@ -64,12 +64,13 @@ bool Json_data::initialization()
             else if (iter.key() == "a07")
                 VecWeekAvNewIncDiag.emplace_back(atof(std::string(iter.value()).c_str()));
             else if (iter.key() == "a10")
-                VecWeekAvNewIncrDiagPerM.emplace_back(atof(std::string(iter.value()).c_str()));
+                VecWeekAvNewIncDiagPerM.emplace_back(atof(std::string(iter.value()).c_str()));
             else
                 continue;
         }
     }
     VTRACE(NULL, "OUT");
+    return VTRUE;
 }
 
 void Json_data::printData()
@@ -81,11 +82,13 @@ void Json_data::printData()
 
     for (int i = 0; i < (int)_JsonData.size(); ++i)
     {
-        std::cout << "区域英文缩写： " << VecEngAbb.at(i) << "\n洲名： " << VecCont.at(i) << "\n国家/地区: " << VecSoTN.at(i)
+        // if (VecSoTN.at(i) == "中國大陸" || VecSoTN.at(i) == "美國" || VecSoTN.at(i) == "印度" || VecSoTN.at(i) == "俄羅斯" || VecSoTN.at(i) == "法國" || VecSoTN.at(i) == "德國")
+        std::cout << "区域英文缩写：" << VecEngAbb.at(i) << "\n洲名: " << VecCont.at(i) << "\n国家/地区: " << VecSoTN.at(i)
                   << "\n日期: " << VecDate.at(i) << "\n总确诊数: " << VecTotalDiag.at(i) << "\n新增确诊数: " << VecNewIncDiag.at(i)
                   << "\n七天平均新增确诊数: " << VecWeekAvNewIncDiag.at(i) << "\n总确诊数/百万人: " << VecTotalDiagPerM.at(i)
-                  << "\n新增确诊数/百万人： " << VecNewIncDiagPerM.at(i) << "\n七天平均新增确诊数/百万人： " << VecWeekAvNewIncrDiagPerM.at(i)
+                  << "\n新增确诊数/百万人： " << VecNewIncDiagPerM.at(i) << "\n七天平均新增确诊数/百万人： " << VecWeekAvNewIncDiagPerM.at(i)
                   << "\n总人口数: " << VecTotalPop.at(i) << std::endl
+                  << "MY POSITION IS " << i << std::endl
                   << std::endl;
     }
 
@@ -123,4 +126,4 @@ JSON_DATA_PARSING_INT(NewIncDiag);
 JSON_DATA_PARSING_FLOAT(TotalDiagPerM);
 JSON_DATA_PARSING_FLOAT(NewIncDiagPerM);
 JSON_DATA_PARSING_FLOAT(WeekAvNewIncDiag);
-JSON_DATA_PARSING_FLOAT(WeekAvNewIncrDiagPerM);
+JSON_DATA_PARSING_FLOAT(WeekAvNewIncDiagPerM);
